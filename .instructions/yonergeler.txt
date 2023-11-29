@@ -1,0 +1,46 @@
+Searchbox:
+    3 ve üzeri karekter girildiğinde (change) arama yapılmalıdır.
+    Herhangi bir filtre varsa dikkate alınmalıdır. (Şemaya göre amazon ve apple)
+ 
+Sidebar (Filtre alanları):
+
+    Marka: 
+        Çoklu seçim olmalı (checkbox)
+        Check veya uncheck gerçekleştiğinde filtereleme işlemi yapılmalı
+
+    Satıcı:
+        Çoklu seçim olmalı (checkbox)
+        Check veya uncheck gerçekleştiğinde filtereleme işlemi yapılmalı
+
+    Fiyat Aralığı:
+        Min-Max fiyat girip uygula butonu tıklandığında filtre yapılmalı
+
+Sticky Alanlar:
+    Sidebar (filtre alanları) ve header sticky olmalı. 
+    Filtrelemeye göre ürün bulundu ise marka veya satıcı sayısı APPLE(3), AMAZON(2) gibi gösterilmeli. Sıfır(0) olan satıcı veya marka filtrelemeden kaldırılmamalı.
+
+Seçilmiş Filtreler:
+    Seçilmiş filtreler button halinde ürün listesinin üzerinde gösterilmeli,
+    Kullanıcı isterse filtreyi silebilmeli
+    Filtre adedi sayfa genişliğini aşıyorsa yatay scroll edilebilir bir alan olarak gösterilmeli
+
+Ürün Listesi:
+    Her bir satırda 3 Ürün card’ı olacak şekilde liste sayfası olmalı
+    Ürün resmi gösterilmeli
+    Fiyat teklifleri mağaza bilgisi ve fiyat bilgisi şeklinde gösterilmeli (AMAZON 28.000 TL)
+    Fiyatı olmayan ürünler için fiyat bulunamadı yazısı olmalı
+    Ürünler Fiyatı artan sıra ile gösterilmeli
+    Her bir sayfada max 9 card listelenmeli
+    Ürün sayısı 9 dan fazla ise sayfalama gösterilmeli
+    Filrelere göre herhangi bir ürün bulunamazsa Seçilen kriterlere göre ürün bulunamadı şeklinde bir uyarı verilmeli
+ 
+
+Teknoloji:
+    Tüm bu geliştirmeler NEXT.JS kullanılarak yapılmalı.
+    Filtreler Client Side olmalı
+    Sayfalama Client Side olmalı
+    Deployment için ücretsiz provider’lar kullanmalı, örnek olarak: cloudflare kullanılabilir.
+
+    Bonus:
+        Typescript kullanımı
+        Styled Component Kullanımı
