@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { backgroundSlightBlue, textGray } from './sharedStyles'
+import { backgroundSlightBlue, textGray, maxMobileSize } from './sharedStyles'
 
 const globalStyle = createGlobalStyle`
   html,
@@ -22,6 +22,18 @@ const globalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: var(--font-inter);
+  }
+
+  .hideMobile {
+    @media screen and (max-width: ${maxMobileSize}px) {
+      display: none;
+    }
+  }
+
+  .hideDesktop {
+    @media screen and (min-width: ${maxMobileSize + 1}px) {
+      display: none;
+    }
   }
 `
 
