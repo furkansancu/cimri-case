@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { maxMobileSize, placeholderColor, themeColor } from "@/components/sharedStyles";
+import { mobileSize, placeholderColor, themeColor } from "@/components/sharedStyles";
 
 export const Container = styled.div`
     display: flex;
@@ -12,8 +12,7 @@ export const Container = styled.div`
     border: 1px solid ${themeColor};
     border-radius: 3px;
     
-    @media screen and (min-width: ${maxMobileSize}) {
-        margin-left: 30px;
+    @media screen and (min-width: ${mobileSize + 1}px) {
         border-width: 2px;
     }
 `

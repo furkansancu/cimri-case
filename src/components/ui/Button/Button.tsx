@@ -1,31 +1,54 @@
-import { StyledButton } from "./Button.styles"
+import { ButtonElement, PrimaryButton, SecondaryButton } from "./Button.styles"
 
 interface ButtonProps {
-    text?: string;
     icon?: JSX.Element;
+    children?: React.ReactNode;
+    classNames?: string[];
+    style?: {};
     width?: number | string;
     height?: number | string;
-    hideMobile?: boolean;
-    hideDesktop?: boolean;
+    fontSize?: string | number;
+    flexShrink?: string;
+    variant?: string;
 }
 
 function Button (props: ButtonProps) {
-  let classNames: string[] = [];
-  if (props.hideMobile) classNames.push("hideMobile")
-  if (props.hideDesktop) classNames.push("hideDesktop")
+  let ButtonComponent = PrimaryButton;
+  
+  if (props.variant?.toLowerCase() == "secondary")
+    ButtonComponent = SecondaryButton;
 
   return (
-    <StyledButton
-        className={classNames.join(" ")}
+    <ButtonComponent
+        className={props.classNames !== undefined ? props.classNames.join(" ") : ""}
         style={{
-            width: props.width !== undefined ? props.width : "inherit",
-            height: props.height !== undefined ? props.height : "inherit",
+            width: props.width,
+            height: props.height,
+            fontSize: props.fontSize,
+            flexShrink: props.flexShrink
         }}
         >
-        {props.text !== undefined ? props.text : null}
-        {props.icon !== undefined ? props.icon : null}
-    </StyledButton>
+          {
+            props.icon !== undefined ?
+              <ButtonElement>{props.icon}</ButtonElement>
+            : null
+          }
+          {
+            props.children !== undefined ?
+              <ButtonElement>{props.children}</ButtonElement>
+            : null
+          }
+    </ButtonComponent>
   )
+}
+
+Button.defaultProps = {
+  variant: "primary",
+  width: "inherit",
+  height: "inherit",
+  fontSize: "inherit",
+  flexShrink: "inherit",
+  classNames: []
 }
 
 export default Button;

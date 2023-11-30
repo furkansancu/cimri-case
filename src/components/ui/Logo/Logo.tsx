@@ -1,15 +1,12 @@
-interface LogoProps {
-    to: string;
-    hideMobile?: boolean;
-    hideDesktop?: boolean;
-}
-
 import { LogoLink } from "./Logo.styles";
 
+interface LogoProps {
+    to: string;
+    classNames?: string[];
+}
+
 function Logo (props: LogoProps) {
-  let classNames: string[] = [];
-  if (props.hideMobile) classNames.push("hideMobile")
-  if (props.hideDesktop) classNames.push("hideDesktop")
+  const classNames = props.classNames !== undefined ? props.classNames : [];
 
   return (
     <LogoLink
@@ -19,10 +16,6 @@ function Logo (props: LogoProps) {
         <strong>cimri</strong> study case
     </LogoLink>
   )
-}
-
-Logo.defaultProps = {
-  hideMobile: false
 }
 
 export default Logo;

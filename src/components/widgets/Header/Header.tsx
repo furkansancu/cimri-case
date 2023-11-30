@@ -14,14 +14,15 @@ function Header() {
         {/* Hide logo in mobile */}
         <Logo
           to="/"
-          hideMobile={true}
+          classNames={["hideMobile", "hideTablet"]}
           />
         {/* Show button in mobile */}
         <Button
-          icon={<MdHouse size={35} />}
+          icon={<MdHouse size={24} />}
           width={40}
           height={40}
-          hideDesktop={true}
+          classNames={["hideDesktop"]}
+          flexShrink="0"
           />
         <HeaderSearch />
       </HeaderWrapper>

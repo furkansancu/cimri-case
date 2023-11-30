@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { backgroundSlightBlue, textGray, maxMobileSize, minDesktopSize } from './sharedStyles'
+import { backgroundSlightBlue, textGray, mobileSize, desktopSize, tabletSize } from './sharedStyles'
 
 const globalStyle = createGlobalStyle`
   html,
@@ -25,13 +25,19 @@ const globalStyle = createGlobalStyle`
   }
 
   .hideMobile {
-    @media (max-width: ${maxMobileSize}) {
+    @media (max-width: ${mobileSize}px) {
+      display: none;
+    }
+  }
+
+  .hideTablet {
+    @media (min-width: ${mobileSize + 1}px) and (max-width: ${tabletSize}px) {
       display: none;
     }
   }
 
   .hideDesktop {
-    @media (min-width: ${minDesktopSize}) {
+    @media (min-width: ${tabletSize + 1}px) {
       display: none;
     }
   }
