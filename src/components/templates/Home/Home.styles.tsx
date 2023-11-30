@@ -5,6 +5,7 @@ export const HomeWrapper = styled.div`
     width: 100%;
     margin-top: 16px;
     padding: 0 16px;
+    margin-bottom: 40px;
 `
 
 export const HomeContainer = styled.div`
