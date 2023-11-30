@@ -3,6 +3,7 @@ import { MdOutlineTune } from "react-icons/md";
 import Button from "@/components/ui/Button/Button";
 
 import { SidebarContainer, MobileButtons } from "./Sidebar.styles";
+import SidebarFilter from "./SidebarFilters/SidebarFilter";
 
 function Sidebar() {
   const filters = [
@@ -16,8 +17,9 @@ function Sidebar() {
         className={"hideDesktop"}
         >
         {
-          filters.map(filter => 
+          filters.map((filter, key) => 
             <Button
+              key={key}
               variant="secondary"
               width="100%"
               height="40px"
@@ -29,6 +31,14 @@ function Sidebar() {
           )
         }
       </MobileButtons>
+      {
+        filters.map((filter, key) => 
+          <SidebarFilter
+            key={key}
+            name={filter.name}
+            />
+        )
+      }
     </SidebarContainer>
   )
 }

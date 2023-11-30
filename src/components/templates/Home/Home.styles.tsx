@@ -4,10 +4,7 @@ import styled from "styled-components";
 export const HomeWrapper = styled.div`
     width: 100%;
     margin-top: 16px;
-
-    @media (max-width: ${tabletSize}px) {
-        padding: 0 16px;
-    }
+    padding: 0 16px;
 `
 
 export const HomeContainer = styled.div`
@@ -26,4 +23,6 @@ export const HomeContainer = styled.div`
     }
 `
 
-export const HomeMain = styled.main``
+export const HomeMain = styled.main`
+    width: 100%;
+`
