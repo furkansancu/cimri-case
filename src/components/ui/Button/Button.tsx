@@ -10,6 +10,7 @@ interface ButtonProps {
     fontSize?: string | number;
     flexShrink?: string;
     variant?: string;
+    onClick?: any;
 }
 
 function Button (props: ButtonProps) {
@@ -48,7 +49,8 @@ Button.defaultProps = {
   height: "inherit",
   fontSize: "inherit",
   flexShrink: "inherit",
-  classNames: []
+  classNames: [],
+  onClick: () => {},
 }
 
 export default Button;

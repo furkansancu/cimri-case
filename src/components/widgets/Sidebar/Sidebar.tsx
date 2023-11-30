@@ -7,10 +7,26 @@ import SidebarFilter from "./SidebarFilters/SidebarFilter";
 
 function Sidebar() {
   const filters = [
-    {name: "Marka Filtresi"},
-    {name: "Satıcı Filtresi"},
-    {name: "Fiyat Aralığı"},
+    {
+      title: "Marka Filtresi",
+      name: "brand",
+      method: "checkbox",
+      values: ["Apple", "Samsung", "Xiaomi"]
+    },
+    {
+      title: "Satıcı Filtresi",
+      name: "merchant",
+      method: "checkbox",
+      values: ["Amazon", "Hepsiburada", "Trendyol"]
+    },
+    {
+      title: "Fiyat Aralığı",
+      name: "price",
+      method: "range",
+      values: ["EN DŞK. FİYAT", "EN YKS. FİYAT"]
+    },
   ];
+
   return (
     <SidebarContainer>
       <MobileButtons
@@ -35,7 +51,10 @@ function Sidebar() {
         filters.map((filter, key) => 
           <SidebarFilter
             key={key}
+            title={filter.title}
             name={filter.name}
+            method={filter.method}
+            values={filter.values}
             />
         )
       }
