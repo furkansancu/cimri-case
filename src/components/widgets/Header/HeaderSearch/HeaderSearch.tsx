@@ -4,10 +4,10 @@ function HeaderSearch () {
   return (
     <Container>
         <Input
-            type="text"
-            name="search"
-            placeholder="Marka veya ürün ara..."
-            />
+          type="text"
+          name="search"
+          placeholder="Marka veya ürün ara..."
+          />
     </Container>
   )
 }

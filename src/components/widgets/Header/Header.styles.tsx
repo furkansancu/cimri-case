@@ -1,4 +1,4 @@
-import { maxMobileSize } from "@/components/sharedStyles";
+import { minDesktopSize } from "@/components/sharedStyles";
 import styled from "styled-components"
 
 export const HeaderBlock = styled.header`
@@ -9,6 +9,10 @@ export const HeaderBlock = styled.header`
     background: #fff;
     z-index: 100;
     padding: 16px;
+
+    @media (min-width: ${minDesktopSize}) {
+        height: 92px;
+    }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -21,6 +25,4 @@ export const HeaderWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: 5px;
-    flex-shrink: 0;
-    flex-wrap: no-warp;
 `;

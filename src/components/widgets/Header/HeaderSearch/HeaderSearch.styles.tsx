@@ -11,8 +11,10 @@ export const Container = styled.div`
     padding: 8px 16px;
     border: 1px solid ${themeColor};
     border-radius: 3px;
+    
     @media screen and (min-width: ${maxMobileSize}) {
         margin-left: 30px;
+        border-width: 2px;
     }
 `
 

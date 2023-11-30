@@ -13,18 +13,17 @@ function Header() {
       <HeaderWrapper>
         {/* Hide logo in mobile */}
         <Logo
-          className="hideMobile"
-          to="/" />
+          to="/"
+          hideMobile={true}
+          />
         {/* Show button in mobile */}
         <Button
-          className="hideDesktop"
           icon={<MdHouse size={35} />}
           width={40}
           height={40}
+          hideDesktop={true}
           />
-        <HeaderSearch
-          
-          />
+        <HeaderSearch />
       </HeaderWrapper>
     </HeaderBlock>
   )
