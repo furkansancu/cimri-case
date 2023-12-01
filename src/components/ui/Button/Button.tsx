@@ -3,7 +3,7 @@ import { ButtonElement, PrimaryButton, SecondaryButton } from "./Button.styles"
 interface ButtonProps {
     icon?: JSX.Element;
     children?: React.ReactNode;
-    classNames?: string[];
+    className?: string;
     style?: {};
     width?: number | string;
     height?: number | string;
@@ -21,13 +21,14 @@ function Button (props: ButtonProps) {
 
   return (
     <ButtonComponent
-        className={props.classNames !== undefined ? props.classNames.join(" ") : ""}
+        className={props.className}
         style={{
             width: props.width,
             height: props.height,
             fontSize: props.fontSize,
             flexShrink: props.flexShrink
         }}
+        onClick={props.onClick}
         >
           {
             props.icon !== undefined ?

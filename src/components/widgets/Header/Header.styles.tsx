@@ -1,7 +1,7 @@
-import { layoutGap, layoutGridColumns, desktopSize, tabletSize } from "@/components/sharedStyles";
+import { layoutGap, layoutGridColumns, desktopSize, tabletSize, borderGray } from "@/components/sharedStyles";
 import styled from "styled-components"
 
-export const HeaderBlock = styled.header`
+export const HeaderWrapper = styled.header`
     position: sticky;
     top: 0;
     width: 100%;
@@ -10,12 +10,14 @@ export const HeaderBlock = styled.header`
     z-index: 100;
     padding: 16px;
 
+    border-bottom: 1px solid ${borderGray};
+
     @media (min-width: ${tabletSize + 1}px) {
         height: 92px;
     }
 `;
 
-export const HeaderWrapper = styled.div`
+export const HeaderContainer = styled.div`
     position: relative;
     width: 100%;
     max-width: ${desktopSize}px;

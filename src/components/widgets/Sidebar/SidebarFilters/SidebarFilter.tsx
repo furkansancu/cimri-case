@@ -8,11 +8,12 @@ interface SidebarFilterProps {
   method: string;
   name: string;
   values: string[];
+  style?: {};
 }
 
 function SidebarFilter (props: SidebarFilterProps) {
   return (
-    <FilterWrapper>
+    <FilterWrapper style={props.style}>
         <FilterHeader> {props.title} </FilterHeader>
         <FilterContainer>
           {
@@ -35,6 +36,10 @@ function SidebarFilter (props: SidebarFilterProps) {
         </FilterContainer>
     </FilterWrapper>
   )
+}
+
+SidebarFilter.defaultProps = {
+  style: {}
 }
 
 export default SidebarFilter

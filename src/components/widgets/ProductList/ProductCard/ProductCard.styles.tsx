@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { textGray, themeColor } from "@/components/sharedStyles";
+import { borderGray, textGray, themeColor } from "@/components/sharedStyles";
 
 export const Card = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: #fff;
+    border: 1px solid ${borderGray};
     border-radius: 3px;
     padding: 15px;
     width: 100%;

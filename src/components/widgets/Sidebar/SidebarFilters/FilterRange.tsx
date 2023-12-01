@@ -61,7 +61,13 @@ function FilterRange(props: RangeFilterProps) {
                 }}
                 min="0"
             />
-            <Button onClick={applyFilter}>UYGULA</Button>
+            <Button
+                onClick={applyFilter}
+                height={35}
+                fontSize={"0.75em"}
+                >
+                UYGULA
+            </Button>
         </>
     )
 }

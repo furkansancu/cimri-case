@@ -2,15 +2,13 @@ import { LogoLink } from "./Logo.styles";
 
 interface LogoProps {
     to: string;
-    classNames?: string[];
+    className?: string;
 }
 
 function Logo (props: LogoProps) {
-  const classNames = props.classNames !== undefined ? props.classNames : [];
-
   return (
     <LogoLink
-        className={classNames.join(" ")}
+        className={props.className}
         href={props.to}
         >
         <strong>cimri</strong> study case

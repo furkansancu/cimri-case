@@ -1,10 +1,10 @@
-import { desktopSize, minSize, mobileSize, tabletSize } from "@/components/sharedStyles";
+import { desktopSize, mobileSize } from "@/components/sharedStyles";
 import styled from "styled-components";
 
 export const List = styled.div`
     position: relative;
     display: block;
-    margin: 0 -5px;
+    margin: -5px;
 `
 
 export const ListItem = styled.div`
