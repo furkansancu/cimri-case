@@ -5,12 +5,9 @@ interface ButtonProps {
     children?: React.ReactNode;
     className?: string;
     style?: {};
-    width?: number | string;
-    height?: number | string;
-    fontSize?: string | number;
-    flexShrink?: string;
     variant?: string;
     onClick?: any;
+    disabled?: boolean;
 }
 
 function Button (props: ButtonProps) {
@@ -22,13 +19,9 @@ function Button (props: ButtonProps) {
   return (
     <ButtonComponent
         className={props.className}
-        style={{
-            width: props.width,
-            height: props.height,
-            fontSize: props.fontSize,
-            flexShrink: props.flexShrink
-        }}
+        style={props.style}
         onClick={props.onClick}
+        disabled={props.disabled}
         >
           {
             props.icon !== undefined ?
@@ -46,10 +39,7 @@ function Button (props: ButtonProps) {
 
 Button.defaultProps = {
   variant: "primary",
-  width: "inherit",
-  height: "inherit",
-  fontSize: "inherit",
-  flexShrink: "inherit",
+  disabled: false,
   classNames: [],
   onClick: () => {},
 }

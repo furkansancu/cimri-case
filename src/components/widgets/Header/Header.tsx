@@ -19,10 +19,12 @@ function Header() {
         {/* Show button in mobile */}
         <Button
           icon={<MdHouse size={24} />}
-          width={40}
-          height={40}
           className="hideDesktop"
-          flexShrink="0"
+          style={{
+            width: "40px",
+            height: "40px",
+            flexShrink: "0"
+          }}
           />
         <HeaderSearch />
       </HeaderContainer>

@@ -34,9 +34,11 @@ function Sidebar() {
     <SidebarContainer>
       <Button
         variant="secondary"
-        width="100%"
-        height="40px"
-        fontSize="0.75em"
+        style={{
+          width: "100%",
+          height: "40px",
+          fontSize: "0.75em",
+        }}
         icon={<MdOutlineTune size={14} />}
         className="hideDesktop"
         onClick={() => setDropdown(!dropdown)}
