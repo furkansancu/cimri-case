@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { setFilter } from "@/redux/productsReducer";
 
-import Button from "@/components/ui/Button/Button";
+import Button from "@/components/ui/Button";
 import { textGray, themeColor } from "@/components/sharedStyles";
 
 interface RangeFilterProps {

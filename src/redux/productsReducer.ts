@@ -69,10 +69,10 @@ const productReducerSlice = createSlice({
         if (priceFilters !== undefined && Array.isArray(priceFilters.value)) {
           const minPrice = priceFilters.value[0];
           const maxPrice = priceFilters.value[1];
-          
+
           if (!product.topOffers.some(offer => {
             return (!(minPrice !== undefined && minPrice > 0) || offer.price >= minPrice) &&
-            (!(maxPrice !== undefined && maxPrice > 0) || offer.price <= maxPrice)
+              (!(maxPrice !== undefined && maxPrice > 0) || offer.price <= maxPrice)
           })) return false;
         }
 
@@ -82,7 +82,7 @@ const productReducerSlice = createSlice({
           !product.title.toLowerCase().includes(searchFilter.value.toLowerCase()) &&
           !product.brand.name.toLowerCase().includes(searchFilter.value.toLowerCase())
         ) return false;
-        
+
         // Don't remove if not filtered.
         return true;
       });
@@ -121,7 +121,7 @@ const getFilterProducts = createSelector(
 
 const getFiltersAndProducts = createSelector(
   (state: GlobalStatesType) => state.products,
-  (state: GlobalStatesType) => { return {filters: state.products.filters, products: state.products.filtered} },
+  (state: GlobalStatesType) => { return { filters: state.products.filters, products: state.products.filtered } },
   (oldState, newState) => {
     return {
       filters: oldState.filters.filter(f => newState.filters.includes(f)),

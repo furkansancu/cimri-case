@@ -4,9 +4,9 @@ import { getFiltersAndProducts } from "@/redux/productsReducer";
 
 import { GlobalStatesType } from "@/components/commonTypes";
 
-import FilterBar from "./FilterBar/FilterBar";
-import Pagination from "@/components/ui/Pagination/Pagination";
-import ProductCard from "./ProductCard/ProductCard"
+import FilterBar from "@/components/widgets/ProductList/FilterBar";
+import ProductCard from "@/components/widgets/ProductList/ProductCard"
+import Pagination from "@/components/ui/Pagination";
 
 import { List, ListItem, NoResult } from "./ProductList.styles";
 

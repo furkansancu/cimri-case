@@ -4,9 +4,9 @@ import { setProducts } from "@/redux/productsReducer";
 
 import Head from "next/head";
 
-import Header from "@/components/widgets/Header/Header";
-import Sidebar from "@/components/widgets/Sidebar/Sidebar";
-import ProductList from "@/components/widgets/ProductList/ProductList";
+import Header from "@/components/widgets/Header";
+import Sidebar from "@/components/widgets/Sidebar";
+import ProductList from "@/components/widgets/ProductList";
 
 import { HomeContainer, HomeWrapper, HomeMain } from "./Home.styles";
 

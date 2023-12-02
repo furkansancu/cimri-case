@@ -8,6 +8,8 @@ const commonButtonStyle = `
     border-radius: 3px;
     padding: 3px 5px;
     gap: 5px;
+    font-weight: 500;
+
     &:disabled {
         opacity: 0.6;
     }

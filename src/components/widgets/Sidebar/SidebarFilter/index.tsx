@@ -1,5 +1,5 @@
-import FilterCheckbox from "./FilterCheckbox";
-import FilterRange from "./FilterRange";
+import FilterCheckbox from "./FilterTypes/FilterCheckbox";
+import FilterRange from "./FilterTypes/FilterRange";
 
 import { FilterWrapper, FilterHeader, FilterContainer } from "./SidebarFilter.styles";
 

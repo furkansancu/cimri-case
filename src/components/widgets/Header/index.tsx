@@ -1,10 +1,10 @@
-import HeaderSearch from "./HeaderSearch/HeaderSearch";
+import HeaderSearch from "./HeaderSearch";
 import { useRouter } from "next/router";
 
-import Logo from "@/components/ui/Logo/Logo";
-import Button from "@/components/ui/Button/Button";
+import Logo from "@/components/ui/Logo";
+import Button from "@/components/ui/Button";
 
-import { MdHouse } from "react-icons/md";
+import { IconHome } from '@tabler/icons-react';
 
 import { HeaderContainer, HeaderWrapper } from "./Header.styles";
 
@@ -21,7 +21,7 @@ function Header() {
           />
         {/* Show button in mobile */}
         <Button
-          icon={<MdHouse size={24} />}
+          icon={<IconHome size={24} />}
           className="hideDesktop"
           style={{
             width: "40px",

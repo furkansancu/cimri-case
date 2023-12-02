@@ -1,8 +1,11 @@
+import styled from "styled-components";
+
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter, findFilter, getFilterProducts } from "@/redux/productsReducer";
 import { GlobalStatesType } from "@/components/commonTypes";
 
-import styled from "styled-components";
+import { textPurple } from "@/components/sharedStyles";
+import Checkbox from "@/components/ui/Checkbox";
 
 interface CheckboxProps {
   name: string;
@@ -15,14 +18,17 @@ const Label = styled.label`
   justify-content: space-between;
   align-items: center;
   user-select: none;
+  font-size: 1em;
+  font-weight: 500;
+  color: ${textPurple};
 `;
 
 const StyledCheckBox = styled.input`
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  margin: 0;
-  margin-right: 10px;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 `;
 
 const FilterName = styled.span`
@@ -30,6 +36,7 @@ const FilterName = styled.span`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  margin-left: 10px;
 `
 
 const FilterCount = styled.small`
@@ -60,6 +67,7 @@ function FilterCheckbox(props: CheckboxProps) {
         checked={Boolean(filter?.value)}
         onChange={changeHandler}
       />
+      <Checkbox checked={Boolean(filter?.value)} />
       <FilterName>
         {props.name}
       </FilterName>
