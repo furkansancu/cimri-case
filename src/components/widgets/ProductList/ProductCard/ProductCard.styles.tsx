@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { borderGray, textGray, themeColor } from "@/components/sharedStyles";
+import { borderGray, textGray, textPurple, themeColor } from "@/components/sharedStyles";
 
 export const Card = styled.article`
     display: flex;
@@ -24,6 +24,7 @@ export const Title = styled.h3`
   font-size: 0.75em;
   height: 30px;
   overflow: hidden;
+  color: ${textPurple};
 `
 
 export const Offers = styled.nav`

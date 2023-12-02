@@ -47,8 +47,9 @@ function Pagination(props: PaginationProps) {
                         disabled={button.to == props.page}
                         onClick={() => { props.setPage(button.to) }}
                         style={{
-                            height: "40px",
-                            padding: "6px 12px"
+                            height: "35px",
+                            padding: "6px 12px",
+                            fontSize: "0.75em"
                         }}
                     >
                         {button.name}

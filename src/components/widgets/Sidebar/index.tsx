@@ -23,8 +23,7 @@ function Sidebar() {
         variant="secondary"
         style={{
           width: "100%",
-          height: "40px",
-          fontSize: "1em",
+          height: "40px"
         }}
         icon={<IconAdjustments size={18} />}
         className="hideDesktop"
