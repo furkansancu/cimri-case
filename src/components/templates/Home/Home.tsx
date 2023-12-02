@@ -10,14 +10,14 @@ import ProductList from "@/components/widgets/ProductList/ProductList";
 
 import { HomeContainer, HomeWrapper, HomeMain } from "./Home.styles";
 
-import ProductsData from "../../../../public/data.json";
+import PRODUCTS_DATA from "../../../../public/data.json";
 
 function Home() {
   const dispatch = useDispatch();
 
   // Set products to global state once
   useEffect(() => {
-    dispatch(setProducts(ProductsData));
+    dispatch(setProducts(PRODUCTS_DATA));
   }, []);
 
   return (

@@ -55,7 +55,7 @@ export const OfferInfo = styled.div`
 `
 
 export const OfferForward = styled.div`
-  margin-right: 15px;
+  margin-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

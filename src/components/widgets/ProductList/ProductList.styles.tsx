@@ -1,4 +1,4 @@
-import { desktopSize, mobileSize, textGray } from "@/components/sharedStyles";
+import { textGray } from "@/components/sharedStyles";
 import styled from "styled-components";
 
 export const List = styled.div`
@@ -12,16 +12,14 @@ export const ListItem = styled.div`
     height: 384px;
     padding: 5px;
     vertical-align: top;
+    
+    width: 100%;
 
-    @media (max-width: ${mobileSize}px) {
-        width: 100%;
-    }
-
-    @media (min-width: ${mobileSize + 1}px) and (max-width: ${desktopSize}px) {
+    @media (min-width: 376px) and (max-width: 575px) {
         width: 50%;
     }
 
-    @media (min-width: ${desktopSize + 1}px) {
+    @media (min-width: 576px) {
         width: 33.3333%;
     }
 `
