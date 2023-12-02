@@ -1,4 +1,4 @@
-import { desktopSize, mobileSize } from "@/components/sharedStyles";
+import { desktopSize, mobileSize, textGray } from "@/components/sharedStyles";
 import styled from "styled-components";
 
 export const List = styled.div`
@@ -24,4 +24,15 @@ export const ListItem = styled.div`
     @media (min-width: ${desktopSize + 1}px) {
         width: 33.3333%;
     }
+`
+
+export const NoResult = styled.div`
+  background: #fff;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${textGray};
 `

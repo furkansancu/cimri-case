@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter, findFilter, getFilterProducts } from "@/redux/productsReducer";
+import { GlobalStatesType } from "@/components/commonTypes";
 
-// import { useDispatch, useSelector } from "react-redux";
-// import { setFilter, findFilter, getFilterProducts } from "@/app/reducers/productReducer";
-// import { ReduxStateType } from "@/components/commonTypes";
+import styled from "styled-components";
 
 interface CheckboxProps {
   name: string;
@@ -38,18 +38,18 @@ const FilterCount = styled.small`
 `
 
 function FilterCheckbox(props: CheckboxProps) {
-//   const dispatch = useDispatch();
-//   const linkedProducts = useSelector((state: ReduxStateType) => getFilterProducts(state, props.type, props.name));
-//   const filter = useSelector((state: ReduxStateType) => findFilter(state, props.type, props.name));
+  const dispatch = useDispatch();
+  const linkedProducts = useSelector((state: GlobalStatesType) => getFilterProducts(state, props.type, props.name));
+  const filter = useSelector((state: GlobalStatesType) => findFilter(state, props.type, props.name));
 
   const changeHandler = (e: { target: { checked: boolean } }) => {
-    // dispatch(
-    //   setFilter({
-    //     type: props.type,
-    //     name: props.name,
-    //     value: e.target.checked,
-    //   })
-    // );
+    dispatch(
+      setFilter({
+        type: props.type,
+        name: props.name,
+        value: e.target.checked,
+      })
+    );
   };
 
   return (
@@ -57,14 +57,14 @@ function FilterCheckbox(props: CheckboxProps) {
       <StyledCheckBox
         type="checkbox"
         name={`${props.type}${props.name}`}
-        checked={false}
+        checked={Boolean(filter?.value)}
         onChange={changeHandler}
       />
       <FilterName>
         {props.name}
       </FilterName>
       <FilterCount>
-        (0)
+        {linkedProducts.length > 0 ? `(${linkedProducts.length})` : null}
       </FilterCount>
     </Label>
   );

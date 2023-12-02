@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setProducts } from "@/redux/productsReducer";
+
 import Head from "next/head";
 
 import Header from "@/components/widgets/Header/Header";
@@ -6,7 +10,16 @@ import ProductList from "@/components/widgets/ProductList/ProductList";
 
 import { HomeContainer, HomeWrapper, HomeMain } from "./Home.styles";
 
+import ProductsData from "../../../../public/data.json";
+
 function Home() {
+  const dispatch = useDispatch();
+
+  // Set products to global state once
+  useEffect(() => {
+    dispatch(setProducts(ProductsData));
+  }, []);
+
   return (
     <>
       <Head>

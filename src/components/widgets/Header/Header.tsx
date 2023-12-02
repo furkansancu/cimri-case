@@ -26,7 +26,9 @@ function Header() {
             flexShrink: "0"
           }}
           />
-        <HeaderSearch />
+        <HeaderSearch
+          name="search"
+          />
       </HeaderContainer>
     </HeaderWrapper>
   )

@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 5px;
   overflow-y: auto;
-  min-height: 37px;
+  max-height: 52px;
   margin-bottom: 5px;
   padding-bottom: 5px;
 `;

@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { useDispatch } from "react-redux";
-import { textGray, themeColor } from "@/components/sharedStyles";
+import { setFilter } from "@/redux/productsReducer";
+
 import Button from "@/components/ui/Button/Button";
-// import { setFilter } from "@/app/reducers/productReducer";
+import { textGray, themeColor } from "@/components/sharedStyles";
 
 interface RangeFilterProps {
     name: string;
@@ -27,16 +28,16 @@ function FilterRange(props: RangeFilterProps) {
     const [min, setMin] = useState<number | undefined>();
     const [max, setMax] = useState<number | undefined>();
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const applyFilter = () => {
-        // dispatch(
-        //     setFilter({
-        //         type: "range",
-        //         name: props.name,
-        //         value: [min, max],
-        //     })
-        // );
+        dispatch(
+            setFilter({
+                type: "range",
+                name: props.name,
+                value: [min, max],
+            })
+        );
     };
 
     return (

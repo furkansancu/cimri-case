@@ -17,3 +17,18 @@ export interface ProductType {
     }[];
     imageUrl: string;
 }
+
+export interface FilterType {
+    name: string;
+    type: string;
+    value: string | boolean | number[];
+    active: boolean;
+}
+
+export interface GlobalStatesType {
+    products: {
+        all: ProductType[];
+        filtered: ProductType[];
+        filters: FilterType[];
+    };
+}

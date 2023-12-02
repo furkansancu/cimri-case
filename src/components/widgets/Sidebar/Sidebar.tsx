@@ -1,26 +1,35 @@
 import { useState } from "react";
-
+import { useSelector } from "react-redux";
 import { MdOutlineTune } from "react-icons/md";
+
+import { GlobalStatesType } from "@/components/commonTypes";
 
 import SidebarFilter from "./SidebarFilters/SidebarFilter";
 import Button from "@/components/ui/Button/Button";
 
 import { SidebarContainer, FiltersDropdown } from "./Sidebar.styles";
 
+
 function Sidebar() {
   const [dropdown, setDropdown] = useState(false);
+
+  const products = useSelector((state: GlobalStatesType) => state.products.all);
+
+  const brands =  [...products.map((p) => p.brand.name)].filter((i, k, s) => s.indexOf(i) == k);
+  const merchants = [...products.map((p) => p.topOffers.map((o) => o.merchant.name)).flat(1)].filter((i, k, s) => s.indexOf(i) == k);
+
   const filters = [
     {
       title: "Marka Filtresi",
       name: "brand",
       method: "checkbox",
-      values: ["Apple", "Samsung", "Xiaomi"]
+      values: brands
     },
     {
       title: "Satıcı Filtresi",
       name: "merchant",
       method: "checkbox",
-      values: ["Amazon", "Hepsiburada", "Trendyol"]
+      values: merchants
     },
     {
       title: "Fiyat Aralığı",

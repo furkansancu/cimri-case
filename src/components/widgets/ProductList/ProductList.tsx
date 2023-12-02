@@ -1,20 +1,31 @@
-import ProductCard from "./ProductCard/ProductCard"
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getFiltersAndProducts } from "@/redux/productsReducer";
 
-import { List, ListItem } from "./ProductList.styles";
+import { GlobalStatesType } from "@/components/commonTypes";
 
-import RawData from "../../../../public/data.json";
 import FilterBar from "./FilterBar/FilterBar";
 import Pagination from "@/components/ui/Pagination/Pagination";
+import ProductCard from "./ProductCard/ProductCard"
+
+import { List, ListItem, NoResult } from "./ProductList.styles";
+
+const LIST_CONTENT_COUNT = 9;
 
 function ProductList() {
+  const [page, setPage] = useState(1);
+  const {filters, products} = useSelector((state: GlobalStatesType) => getFiltersAndProducts(state));
+  const maxPage = Math.ceil(products.length / LIST_CONTENT_COUNT);
+
+  // Filtreler her değiştiğinde ilk sayfaya dön.
+  useEffect(() => {setPage(1)}, [filters]);
+  
   return (
     <>
-      <FilterBar
-      
-      />
+      <FilterBar />
       <List>
         {
-          RawData.slice(0, 9).map((product, key) =>
+          products.slice((page - 1) * LIST_CONTENT_COUNT, page * LIST_CONTENT_COUNT).map((product, key) =>
             <ListItem
               key={key}
             >
@@ -26,12 +37,13 @@ function ProductList() {
             </ListItem>
           )
         }
+        { products.length == 0 ? <NoResult> Sonuç bulunamadı. </NoResult> : null }
       </List>
-        <Pagination
-          page={1}
-          maxPage={9}
-          setPage={()=>{}}
-          />
+      { products.length > 0 ? <Pagination
+        page={page}
+        maxPage={maxPage}
+        setPage={(newPage: number)=>setPage(newPage)}
+        /> : null }
     </>
   )
 }

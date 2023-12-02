@@ -8,6 +8,9 @@ const commonButtonStyle = `
     border-radius: 3px;
     padding: 3px 5px;
     gap: 5px;
+    &:disabled {
+        opacity: 0.6;
+    }
 `;
 
 export const PrimaryButton = styled.button`

@@ -25,5 +25,5 @@ export const HomeContainer = styled.div`
 `
 
 export const HomeMain = styled.main`
-    width: 100%;
+    overflow: hidden;
 `
