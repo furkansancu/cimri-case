@@ -18,10 +18,10 @@ export const FilterContainer = styled.div`
   flex-direction: column;
   border-radius: 4px;
   gap: 5px;
-  border: 1px solid ${borderGray};
 
   @media (min-width: ${tabletSize + 1}px) {
     padding: 16px;
+    border: 1px solid ${borderGray};
   }
 `;
 
