@@ -26,19 +26,19 @@ const globalStyle = createGlobalStyle`
 
   .hideMobile {
     @media (max-width: ${mobileSize}px) {
-      display: none;
+      display: none !important;
     }
   }
 
   .hideTablet {
     @media (min-width: ${mobileSize + 1}px) and (max-width: ${tabletSize}px) {
-      display: none;
+      display: none !important;
     }
   }
 
   .hideDesktop {
     @media (min-width: ${tabletSize + 1}px) {
-      display: none;
+      display: none !important;
     }
   }
 `
