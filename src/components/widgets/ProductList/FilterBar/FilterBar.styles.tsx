@@ -1,4 +1,4 @@
-import { textGray } from "@/components/sharedStyles";
+import { borderGray, textGray } from "@/components/sharedStyles";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -24,6 +24,7 @@ export const Filter = styled.div`
   border-radius: 3px;
   cursor: default;
   user-select: none;
+  border: 1px solid ${borderGray};
 `;
 
 export const DeleteButton = styled.button`

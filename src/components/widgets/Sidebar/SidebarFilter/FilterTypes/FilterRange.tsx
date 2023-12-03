@@ -50,17 +50,15 @@ function FilterRange(props: RangeFilterProps) {
                 onChange={(e: { target: { value: string } }) => {
                     setMin(parseInt(e.target.value));
                 }}
-                min="0"
             />
             <Input
                 type="number"
-                name={`range_min_${props.name}`}
+                name={`range_max_${props.name}`}
                 value={max || ""}
                 placeholder={props.values[1]}
                 onChange={(e: { target: { value: string } }) => {
                     setMax(parseInt(e.target.value));
                 }}
-                min="0"
             />
             <Button
                 onClick={applyFilter}

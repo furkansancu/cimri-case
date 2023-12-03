@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { borderGray, textGray, textPurple, themeColor } from "@/components/sharedStyles";
+import { borderGray, mobileSize, tabletSize, textGray, textPurple, themeColor } from "@/components/sharedStyles";
 
 export const Card = styled.article`
     display: flex;
@@ -22,7 +22,7 @@ export const CardImage = styled(Image)`
 export const Title = styled.h3`
   display: block;
   font-size: 0.75em;
-  height: 30px;
+  max-height: 30px;
   overflow: hidden;
   color: ${textPurple};
 `
@@ -32,6 +32,11 @@ export const Offers = styled.nav`
   flex-direction: column;
   gap: 6px;
   height: 90px;
+`
+
+const OfferButtonHover = `
+  background-color: #f3f3f3;
+  padding-left: 7px;
 `
 
 export const OfferButton = styled.a`
@@ -45,8 +50,11 @@ export const OfferButton = styled.a`
   transition: padding ease-in-out 0.2s;
 
   &:hover {
-    background-color: #f3f3f3;
-    padding-left: 7px;
+    ${OfferButtonHover}
+  }
+
+  @media (max-width: ${mobileSize}px) {
+    ${OfferButtonHover}
   }
 `
 

@@ -15,7 +15,7 @@ export const ListItem = styled.div`
     
     width: 100%;
 
-    @media (min-width: 376px) and (max-width: 575px) {
+    @media (min-width: 381px) and (max-width: 575px) {
         width: 50%;
     }
 
