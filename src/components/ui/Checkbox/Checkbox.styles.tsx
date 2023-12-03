@@ -14,6 +14,6 @@ export const StyledCheckbox = styled.div`
 
     &.active {
         border: none;
-        backgroundColor: ${themeColor};
+        background-color: ${themeColor};
     }
 `
