@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-cloudflare": "npx @cloudflare/next-on-pages@1"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.8.0",
     "@mui/icons-material": "^5.14.19",
     "@reduxjs/toolkit": "^1.9.7",
     "@tabler/icons-react": "^2.42.0",
