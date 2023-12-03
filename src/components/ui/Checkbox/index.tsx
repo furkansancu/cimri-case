@@ -7,15 +7,12 @@ interface CheckboxProps {
 }
 
 function Checkbox(props: CheckboxProps) {
-    const { checked, rest } = props;
-
     return (
         <StyledCheckbox
-            $active={checked}
-            {...rest}
-        >
+            className={props.checked ? "active" : ""}
+            >
             {
-                checked ?
+                props.checked ?
                     <IconCheck color='#fff' />
                     : null
             }

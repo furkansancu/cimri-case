@@ -12,8 +12,8 @@ export const StyledCheckbox = styled.div`
     border-radius: 3px;
     flex-shrink: 0;
 
-    ${(props: {active: boolean}) => props.$active && ({
-        border: "none",
-        backgroundColor: themeColor
-    })}
+    &.active {
+        border: none;
+        backgroundColor: ${themeColor};
+    }
 `
