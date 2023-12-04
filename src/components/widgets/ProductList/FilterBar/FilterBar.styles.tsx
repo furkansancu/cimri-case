@@ -5,7 +5,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
   max-height: 52px;
   margin-bottom: 5px;
   padding-bottom: 5px;
